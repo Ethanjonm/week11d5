@@ -21,12 +21,18 @@ const ReviewForm = ({ review, formType, onSubmit, closeForm }) => {
     setRating(parseInt(number));
   };
 
+  const clickHandler = (num) => {
+    setRating(num)
+  }
+
+
   return (
     <form onSubmit={handleSubmit} >
       <PawsRatingInput
         disabled={false}
         onChange={onChange}
         rating={rating}
+        clickHandler={clickHandler}
       />
       <input type="submit" value={formType} />
       <button onClick={closeForm}>Cancel</button>
